@@ -8,49 +8,71 @@
 /* Global Styles */
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #AA6C39;
+    background: linear-gradient(120deg, #f6d365, #fda085);
+    color: #333;
     margin: 0;
-    padding: 20px; /* Adding padding to the body to prevent sticking at the top */
+    padding: 20px;
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Aligns content towards the top */
+    align-items: flex-start;
     min-height: 100vh;
+    overflow: hidden; /* Prevent scrolling due to animations */
+    position: relative;
+}
+
+/* Background Animation */
+body::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.15), transparent 70%);
+    animation: animate-bg 6s infinite linear;
+    z-index: 0;
 }
 
 /* Main Container */
 section {
-    background-color: light blue;
+    background: #fff;
     padding: 2rem;
     width: 90%;
     max-width: 800px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
     text-align: center;
-    margin-top: 30px; /* Adding margin to ensure there's space from the top */
+    margin-top: 30px;
+    position: relative;
+    z-index: 1;
 }
 
 /* Header */
 header {
-    background-color:#123456;
+    background: linear-gradient(135deg, #4a90e2, #0078d7);
     color: white;
     padding: 2rem;
-    border-radius: 8px;
+    border-radius: 12px;
     margin-bottom: 1.5rem;
 }
 
 header h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin: 0;
+    font-weight: 600;
 }
 
 header p {
     margin: 1rem 0 0;
+    font-size: 1rem;
+    opacity: 0.9;
 }
 
 /* Section Titles */
 h2 {
-    color: #4CAF50;
+    color: #4a90e2;
     margin-bottom: 1rem;
+    font-size: 1.8rem;
 }
 
 /* List Items */
@@ -60,42 +82,53 @@ ul {
 }
 
 ul li {
-    background-color: #e7f7e7;
-    margin-bottom: 0.5rem;
+    background-color: #f1f9ff;
+    margin-bottom: 0.75rem;
     padding: 0.75rem;
-    border-radius: 5px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+ul li:hover {
+    background-color: #e0f0ff;
+    transform: scale(1.02);
 }
 
 /* Links */
 a {
-    color: #4CAF50;
+    color: #0078d7;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 a:hover {
     text-decoration: underline;
+    color: #005bb5;
 }
 
 /* Definition List */
 dl dt {
     font-weight: bold;
-    color: #333;
+    color: #4a90e2;
     margin-top: 1rem;
 }
 
 dl dd {
     margin-left: 1.5rem;
-    color: #666;
+    color: #555;
 }
 
 /* Blockquote */
 blockquote {
     font-style: italic;
     color: #555;
-    border-left: 4px solid #4CAF50;
+    border-left: 4px solid #4a90e2;
     padding-left: 1rem;
     margin-top: 2rem;
+    background: rgba(74, 144, 226, 0.1);
+    border-radius: 4px;
 }
 
 /* Responsive Design */
@@ -106,5 +139,22 @@ blockquote {
 
     header {
         padding: 1.5rem;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Keyframes for Background Animation */
+@keyframes animate-bg {
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(-50px, -50px);
+    }
+    100% {
+        transform: translate(0, 0);
     }
 }
