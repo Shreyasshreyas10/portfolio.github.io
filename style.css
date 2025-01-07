@@ -185,29 +185,38 @@ blockquote {
         font-size: 1.8rem; /* Adjusted size */
     }
 }
-/* Ensure body and html have no extra height */
+/* Ensure body and html have no unnecessary height */
 body, html {
     margin: 0;
     padding: 0;
-    height: 100%; /* Ensures the content doesn't extend beyond the viewport */
+    height: 100%; /* Makes the body match the viewport height */
+    overflow-x: hidden; /* Prevents horizontal scrolling */
 }
 
-/* Remove bottom padding and margin from the blockquote or section */
+/* Adjust the blockquote to remove extra space below */
 blockquote {
-    margin-bottom: 0;
-    padding-bottom: 0;
+    margin-bottom: 0; /* Removes default margin below */
+    padding-bottom: 1rem; /* Keep minimal padding for aesthetics */
 }
 
-/* Ensure the parent section has no unnecessary spacing */
+/* Ensure the parent section has no extra spacing */
 section {
-    margin-bottom: 0; /* Adjust if needed */
-    padding-bottom: 1rem; /* Minimal padding for aesthetics */
+    margin-bottom: 0; /* Removes margin below the section */
+    padding-bottom: 1rem; /* Minimal padding to maintain design */
 }
 
-/* Remove potential min-height or excessive height from containers */
+/* Ensure the container wrapping everything is clean */
 .container {
-    min-height: auto; /* Reset if there's any min-height */
-    height: auto;
+    margin-bottom: 0; /* Removes unnecessary margin */
+    padding-bottom: 0;
+    height: auto; /* Prevents fixed height from causing spacing issues */
 }
 
+/* Prevents additional space added by Flexbox alignment */
+body {
+    display: flex;
+    flex-direction: column; /* Stacks elements vertically */
+    justify-content: flex-start; /* Ensures content starts at the top */
+    align-items: center; /* Centers the content horizontally */
+}
 
