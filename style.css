@@ -173,9 +173,4 @@ blockquote {
         font-size: 1.8rem;
     }
 }
-html, body {
-    margin: 0 !important; /* Force reset of margin */
-    padding: 0 !important;
-    height: 100%; /* Ensure full height for the viewport */
-    overflow-x: hidden; /* Prevent horizontal scrolling */
-}
+
