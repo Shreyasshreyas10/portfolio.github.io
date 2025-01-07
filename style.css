@@ -11,12 +11,12 @@ body {
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(120deg, #5b247a, #1bcedf, #f3ffbd);
     color: #333;
-    margin: 0;
-    padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
     min-height: 100vh;
+    margin: 0;
     overflow-x: hidden;
     position: relative;
 }
@@ -36,28 +36,28 @@ body::before {
     opacity: 0.7;
 }
 
-/* Main Container */
+/* Main Container (Section) */
 section {
     background: linear-gradient(135deg, #ffffff, #eef1f7);
-    padding: 1.5rem; /* Reduced padding */
+    padding: 1.5rem; /* Section padding */
     width: 90%;
     max-width: 800px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     border-radius: 12px;
     text-align: center;
-    margin: 15px 0; /* Reduced margin */
-    position: relative;
+    margin: 20px 0; /* Section spacing */
     animation: fadeIn 1s ease-in;
+    position: relative;
     overflow: hidden;
 }
 
-/* Header */
+/* Header Styling */
 header {
     background: linear-gradient(135deg, #ff416c, #ff4b2b);
     color: white;
-    padding: 1.5rem; /* Reduced padding */
+    padding: 1.5rem;
     border-radius: 12px;
-    margin-bottom: 1rem; /* Reduced margin */
+    margin-bottom: 1.5rem;
     animation: slideInLeft 1s ease-in-out;
     display: flex;
     flex-direction: column;
@@ -65,41 +65,28 @@ header {
 }
 
 header h1 {
-    font-size: 2.2rem; /* Adjusted size */
+    font-size: 2.2rem;
     margin: 0;
     font-weight: 700;
 }
 
 header p {
-    margin: 0.5rem 0 0; /* Reduced margin */
+    margin: 0.5rem 0 0;
     font-size: 1rem;
     opacity: 0.8;
-}
-
-/* Icons in Header */
-header::after {
-    content: '⚡';
-    font-size: 2.5rem; /* Reduced icon size */
-    animation: bounce 2s infinite;
-    margin-top: 0.5rem; /* Reduced space below icon */
 }
 
 /* Section Titles */
 h2 {
     color: #374ABE;
-    margin-bottom: 0.5rem; /* Reduced margin */
-    font-size: 1.8rem; /* Adjusted size */
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
     animation: fadeInDown 1s ease-in-out;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
-/* Title Icon */
 h2::before {
     content: '🌟';
-    margin-right: 0.3rem; /* Reduced spacing before icon */
-    font-size: 1.2rem;
+    margin-right: 0.5rem;
 }
 
 /* List Items */
@@ -108,13 +95,13 @@ ul {
     padding: 0;
     margin: 0;
     display: grid;
-    gap: 5px; /* Reduced gap */
+    gap: 10px;
 }
 
 ul li {
     background-color: #f8f9fa;
-    padding: 0.5rem; /* Reduced padding */
-    border-radius: 6px; /* Slightly smaller border radius */
+    padding: 0.8rem;
+    border-radius: 6px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, background-color 0.3s ease;
     animation: fadeInUp 1s ease-in-out;
@@ -129,7 +116,7 @@ ul li:hover {
 
 ul li::before {
     content: '✔️';
-    margin-right: 0.5rem; /* Reduced spacing */
+    margin-right: 0.5rem;
     color: #4caf50;
 }
 
@@ -146,26 +133,27 @@ a:hover {
     color: #1e63d3;
 }
 
-/* Definition List */
+/* Definition List Styling */
 dl dt {
     font-weight: bold;
     color: #4caf50;
-    margin-top: 0.8rem; /* Reduced spacing */
+    margin-top: 1rem;
     animation: zoomIn 1s ease-in;
 }
 
 dl dd {
-    margin-left: 1.2rem; /* Reduced spacing */
+    margin-left: 1.5rem;
     color: #555;
 }
 
-/* Blockquote */
+/* Blockquote Styling */
 blockquote {
     font-style: italic;
     color: #374ABE;
     border-left: 4px solid #ff4b2b;
-    padding-left: 0.8rem; /* Reduced padding */
-    margin-top: 1.5rem; /* Reduced margin */
+    padding-left: 0.8rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0; /* Removed excess space below */
     background: rgba(255, 75, 43, 0.1);
     border-radius: 6px;
     animation: slideInRight 1s ease-in-out;
@@ -174,7 +162,7 @@ blockquote {
 /* Responsive Design */
 @media (max-width: 600px) {
     section {
-        padding: 1rem; /* Reduced padding for smaller screens */
+        padding: 1rem;
     }
 
     header {
@@ -182,41 +170,6 @@ blockquote {
     }
 
     header h1 {
-        font-size: 1.8rem; /* Adjusted size */
+        font-size: 1.8rem;
     }
 }
-/* Ensure body and html have no unnecessary height */
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%; /* Makes the body match the viewport height */
-    overflow-x: hidden; /* Prevents horizontal scrolling */
-}
-
-/* Adjust the blockquote to remove extra space below */
-blockquote {
-    margin-bottom: 0; /* Removes default margin below */
-    padding-bottom: 1rem; /* Keep minimal padding for aesthetics */
-}
-
-/* Ensure the parent section has no extra spacing */
-section {
-    margin-bottom: 0; /* Removes margin below the section */
-    padding-bottom: 1rem; /* Minimal padding to maintain design */
-}
-
-/* Ensure the container wrapping everything is clean */
-.container {
-    margin-bottom: 0; /* Removes unnecessary margin */
-    padding-bottom: 0;
-    height: auto; /* Prevents fixed height from causing spacing issues */
-}
-
-/* Prevents additional space added by Flexbox alignment */
-body {
-    display: flex;
-    flex-direction: column; /* Stacks elements vertically */
-    justify-content: flex-start; /* Ensures content starts at the top */
-    align-items: center; /* Centers the content horizontally */
-}
-
