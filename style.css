@@ -185,5 +185,29 @@ blockquote {
         font-size: 1.8rem; /* Adjusted size */
     }
 }
+/* Ensure body and html have no extra height */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Ensures the content doesn't extend beyond the viewport */
+}
 
-/* Keyframes and Animations remain the same */
+/* Remove bottom padding and margin from the blockquote or section */
+blockquote {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+/* Ensure the parent section has no unnecessary spacing */
+section {
+    margin-bottom: 0; /* Adjust if needed */
+    padding-bottom: 1rem; /* Minimal padding for aesthetics */
+}
+
+/* Remove potential min-height or excessive height from containers */
+.container {
+    min-height: auto; /* Reset if there's any min-height */
+    height: auto;
+}
+
+
